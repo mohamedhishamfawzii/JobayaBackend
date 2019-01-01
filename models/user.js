@@ -32,7 +32,7 @@ var crypto = require('crypto');
 
 function isEmailExists(email, callback) {
   if (email) {
-      mongoose.models['Emp_User'].count({ _id: { '$ne': this._id }, email: email }, function (err, result) {
+      mongoose.models['User'].count({ _id: { '$ne': this._id }, email: email }, function (err, result) {
           if (err) {
               return callback(err);
           }

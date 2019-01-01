@@ -8,6 +8,7 @@ const {mongoose} = require('./db/mongoose');
 //database models
 const {user} = require('./models/user');
 const {emp_user} = require('./models/emp_user');
+const {application}= require('./models/applications');
 
 //const {jobz} = require('./models/jobs');
 
@@ -18,7 +19,8 @@ const register = require('./routes/register');
 const jobs = require('./routes/jobs');
 const login_employer = require('./routes/login_employer');
 const register_employer = require('./routes/register_employer');
-
+const applications = require('./routes/applications');
+const apply = require('./routes/apply');
 
 
 var app = express();
@@ -39,7 +41,8 @@ app.use('/register', register);
 app.use('/jobs', jobs);
 app.use('/login_employer', login_employer);
 app.use('/register_employer', register_employer);
-
+app.use('/applications', applications);
+app.use('/apply', apply)
 app.listen(process.env.PORT || port);
 
 console.log('We are live on ' + port);

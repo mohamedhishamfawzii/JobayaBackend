@@ -12,15 +12,15 @@ router.get('/all', (req, res) => {
     })
   });
   
-  /*router.get('/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
     var id = req.params.id;
   
     Job.findById(id, (err, doc) => {
       console.log(doc);
       res.json(doc);
     });
-  });*/
-  router.get('/:employer_email', (req, res) => {
+  });
+  router.get('/email/:employer_email', (req, res) => {
     var employer_email = req.params.employer_email;
   
     Job.find({
@@ -40,6 +40,7 @@ router.post('/add', (req, res) => {
     description: req.body.description,
     duration: req.body.duration,
     age: req.body.age,
+    job_type: req.body.job_type,
     gender: req.body.gender,
     skills: req.body.skills,
     language: req.body.language,

@@ -18,6 +18,9 @@ var Job = mongoose.model('Job', {
    gender: {
     type: String
   },
+  job_type: {
+    type: String
+  },
   language: {
     type: String
   },

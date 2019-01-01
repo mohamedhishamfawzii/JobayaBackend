@@ -5,6 +5,18 @@ var {User} = require('./../models/user');
 
 var router = express.Router();
 
+router.get('/:email', (req, res) => {
+  var email = req.params.email;
+
+  User.find({
+    email: email
+  }).then((doc) => {
+    console.log(doc);
+    res.json(doc);
+  }, (e) => {
+    console.log(e);
+  });
+});
 router.post('/', (req, res) => {
   var newUser = new User({
     username: req.body.username,
@@ -14,6 +26,9 @@ router.post('/', (req, res) => {
     age: req.body.age,
     gender: req.body.gender
   });
+
+  
+  
 
   /*User.find({
     email: email

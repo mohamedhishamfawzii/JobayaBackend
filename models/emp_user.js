@@ -20,7 +20,7 @@ var crypto = require('crypto');
    gender: {
     type: String
   },
-  email: {
+  emp_email: {
     type: String,
     lowercase: true,
     validate: {
@@ -33,10 +33,43 @@ var crypto = require('crypto');
  });
  // validation
  
-function isEmailExists(email, callback) {
-  if (email) {
-      mongoose.models['Emp_User'].count({ _id: { '$ne': this._id }, email: email }, function (err, result) {
-          if (err) {
+function isEmailExists(emp_email, callback) {
+  if (emp_email) {
+      mongoose.models['Emp_User'].count({ _id: { '$ne': this._id }, emp_email: emp_email }, function (err, result) {
+          if (err)
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          {
               return callback(err);
           }
           callback(!result);

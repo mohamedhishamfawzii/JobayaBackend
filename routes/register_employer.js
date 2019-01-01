@@ -4,13 +4,24 @@ var mongoose = require('./../db/mongoose');
 var {Emp_User} = require('./../models/emp_user');
 
 var router = express.Router();
+router.get('/:email', (req, res) => {
+  var emp_email = req.params.emp_email;
 
+  Emp_User.find({
+    emp_email: emp_email
+  }).then((doc) => {
+    console.log(doc);
+    res.json(doc);
+  }, (e) => {
+    console.log(e);
+  });
+});
 router.post('/', (req, res) => {
   var newEmpUser = new Emp_User({
     username: req.body.username,
     password: req.body.password,
     name: req.body.name,
-    email: req.body.email,
+    emp_email: req.body.emp_email,
     age: req.body.age,
     gender: req.body.gender,
     phone_number: req.body.phone_number
