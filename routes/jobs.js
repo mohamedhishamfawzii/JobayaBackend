@@ -20,6 +20,22 @@ router.get('/all', (req, res) => {
       res.json(doc);
     });
   });
+
+  //NEW
+  router.get('/category/:category', (req, res) => {
+    var category = req.params.category;
+  
+    Job.find({
+      category: category
+    }).then((doc) => {
+      console.log(doc);
+      res.json(doc);
+    }, (e) => {
+      console.log(e);
+    });
+  });
+
+
   router.get('/email/:employer_email', (req, res) => {
     var employer_email = req.params.employer_email;
   
@@ -39,6 +55,9 @@ router.post('/add', (req, res) => {
     title: req.body.title,
     description: req.body.description,
     duration: req.body.duration,
+
+    category: req.body.category,
+
     age: req.body.age,
     job_type: req.body.job_type,
     gender: req.body.gender,

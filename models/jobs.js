@@ -15,6 +15,11 @@ var Job = mongoose.model('Job', {
    age: {
      type: String
    },
+   
+   category: {
+    type: String,
+    required: true
+  },
    gender: {
     type: String
   },
