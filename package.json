@@ -909,7 +909,23 @@
       "resolved": "https://registry.npmjs.org/bn.js/-/bn.js-4.11.7.tgz",
       "version": "4.11.7"
     },
-    "body-parser": "^1.18.3",
+    "body-parser": {
+      "integrity": "sha1-+IkqvI+eYn1Crtr7yma/WrmRBO4=",
+      "requires": {
+        "bytes": "2.4.0",
+        "content-type": "~1.0.2",
+        "debug": "2.6.7",
+        "depd": "~1.1.0",
+        "http-errors": "~1.6.1",
+        "iconv-lite": "0.4.15",
+        "on-finished": "~2.3.0",
+        "qs": "6.4.0",
+        "raw-body": "~2.2.0",
+        "type-is": "~1.6.15"
+      },
+      "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.17.2.tgz",
+      "version": "1.17.2"
+    },
     "boolbase": {
       "integrity": "sha1-aN/1++YMUes3cl6p4+0xDcwed24=",
       "resolved": "https://registry.npmjs.org/boolbase/-/boolbase-1.0.0.tgz",
@@ -4107,7 +4123,7 @@
       "resolved": "https://registry.npmjs.org/mongodb-core/-/mongodb-core-2.1.11.tgz",
       "version": "2.1.11"
     },
-    "mongoose": "^5.4.1",
+    "mongoose": "^5.4.22",
     "mpath": {
       "integrity": "sha1-elj3iem1/TyUUgY0FXlg8mvV70Q=",
       "resolved": "https://registry.npmjs.org/mpath/-/mpath-0.3.0.tgz",
