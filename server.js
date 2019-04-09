@@ -30,7 +30,7 @@ var router = express.Router();
 const port = 5000;
 //middleware
 //app.use(express.static(path.join(__dirname, 'public/ng-adminsystem/dist')));
-app.use(express.bodyParser());
+app.use(bodyParser.json());
 app.use((req, res, next) => {
 	var now = new Date().toString();
 	console.log(`Time: ${now} : ${req.method} ${req.url}`);
