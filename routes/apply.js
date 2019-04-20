@@ -14,9 +14,9 @@ router.post('/', (req, res) => {
     job_ID: job_ID
   }).then((doc) => {
     if (doc.length === 0) {
-      res.json({found: true});
-    }else {
       res.json({found: false});
+    }else {
+      res.json({found: true});
     }
   }, (e) => {
     console.log(e);

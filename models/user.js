@@ -36,7 +36,8 @@ function isEmailExists(email, callback) {
           if (err) {
               return callback(err);
           }
-          callback(!result);
+          console.log("done");
+         // callback(!result); 
       })
   }
 }
