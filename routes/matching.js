@@ -1,3 +1,79 @@
+
+
+
+
+const express = require('express');
+
+var mongoose = require('./../db/mongoose');
+var {Job} = require('./../models/jobs');
+
+var router = express.Router();
+
+router.post('/', (req, res) => {
+  var gender = req.body.gender;
+  var age = req.body.age;
+
+
+  Job.find({
+    gender: gender,
+    age:age
+
+ 
+  }).then((doc) => {
+    if (doc.length === 0) {
+      res.json({found: false});
+    }else {
+
+res.json({found: true, result:doc});
+    
+    }
+  }, (e) => {
+    console.log(e);
+  })
+});
+
+
+
+module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**************************************************************************************/
 //We dont need the model
 //We need to pass the job ID to check the gender from this specifir job
@@ -14,7 +90,6 @@
 //assign them to variables
 //use deepEqual w rabena yostor
 //deepEqual(user_gender,job_req_gender);
-
 
 
 
